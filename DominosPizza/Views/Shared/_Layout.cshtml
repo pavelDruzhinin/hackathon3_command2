@@ -11,7 +11,24 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-topdefault navbar-fixed-top navbar-dominospizza">
+    <div id="topImage">
+        <div><img src="../img/top.png" /></div>
+        <div id="logo"><img  src="../img/logo.png" /></div>
+    </div>
+    <div class="container">
+        <div id="customnavbar">
+                <div class="menuitems">@Html.ActionLink("ВЫБРАТЬ ПИЦЦУ", "Index", "Home")</div>
+                <div class="menuitems">@Html.ActionLink("ПРАВИЛА", "Rules", "Home")</div>
+                <div class="menuitems">@Html.ActionLink("КАК ЗАКАЗАТЬ", "HowToOrder", "Home")</div>
+                <div class="menuitems">@Html.ActionLink("КОНТАКТНАЯ ИНФОРМАЦИЯ", "Contact", "Home")</div>
+                <div class="menuitems">@Html.ActionLink("ВАКАНСИИ", "Vacations", "Home")</div>
+            </ul>
+        </div>
+        <div class="hrcustom"> </div>
+    </div>
+
+<!--
+    <div class="navbar   navbar-dominospizza">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,15 +40,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Выбрать пиццу", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Правила", "Rules", "Home")</li>
-                    <li>@Html.ActionLink("Как заказать", "HowToOrder", "Home")</li>
-                    <li>@Html.ActionLink("Контактная информация", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Вакансии", "Vacations", "Home")</li>
+                    <li>Html.ActionLink("Выбрать пиццу", "Index", "Home")</li>
+                    <li>Html.ActionLink("Правила", "Rules", "Home")</li>
+                    <li>Html.ActionLink("Как заказать", "HowToOrder", "Home")</li>
+                    <li>Html.ActionLink("Контактная информация", "Contact", "Home")</li>
+                    <li>Html.ActionLink("Вакансии", "Vacations", "Home")</li>
                 </ul>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="container body-content">
         @RenderBody()
         <hr />
