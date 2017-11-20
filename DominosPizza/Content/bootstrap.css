@@ -4382,10 +4382,6 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-left: 15px;
   }
 }
-.navbar-dominospizza {
-    background-color: #E6E6FA;
-    border-color: #e7e7e7;
-}
 
 .navbar-default {
   background-color: #f8f8f8;
@@ -4932,13 +4928,13 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
-    padding: 30px;
-    margin-bottom: 30px;
-    font-size: 21px;
-    font-weight: 200;
-    line-height: 2.1428571435;
-    color: inherit;
-    background-color: #eeeeee;
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: #eeeeee;
 }
 
 .jumbotron h1 {

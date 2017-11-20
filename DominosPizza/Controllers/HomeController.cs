@@ -13,23 +13,17 @@ namespace DominosPizza.Controllers
             return View();
         }
 
-        public ActionResult Rules()
+        public ActionResult About()
         {
-            return View();
-        }
+            ViewBag.Message = "Your application description page.";
 
-        public ActionResult HowToOrder()
-        {
             return View();
         }
 
         public ActionResult Contact()
         {
-            return View();
-        }
+            ViewBag.Message = "Your contact page.";
 
-        public ActionResult Vacations()
-        {
             return View();
         }
     }
