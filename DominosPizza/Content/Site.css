@@ -1,6 +1,7 @@
 ﻿body {
-    padding-top: 50px;
+
     padding-bottom: 20px;
+    
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -21,4 +22,140 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+#topImage {
+    position: relative;
+
+}
+#topImage img{
+    width: 100%;
+}
+#logo {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -5%;
+    margin-left: -5%;
+    width: 10%;
+}
+#customnavbar {
+    width: 100%;
+
+    display:flex;
+    justify-content: center;
+    flex-wrap:wrap;
+}
+ 
+    }
+.menuitems {
+
+    display:block;
+}
+    .menuitems a {
+        display: block;
+        color: #e41843;
+        font-weight: bold;
+        font-size: 1.1em;
+        text-decoration: none;
+        line-height: 55px;
+        padding: 3px 20px 0 20px;
+        white-space: nowrap;
+        margin-left: -5px;
+    }
+.menuitems a:hover {
+            text-decoration: none;
+            background-color: #e41843;
+            color: #ffffff;
+    }
+.hrcustom {
+    background-color: #e41843;
+    height: 2px;
+    width: 100%;
+}
+.pizzasize-passive {
+    background-color: #ffffff;
+    color: #ed7673;
+    width: 32%;
+    text-align: center;
+}
+.pizzasize-active {
+    background-color: #e41843;
+    color: #ffffff;
+    width: 35%;
+    text-align: center;
+}
+.pizzasize {
+    display: flex;
+    justify-content: space-between;
+    line-height: 28px;
+    margin: 0 0 0 10px;
+    border: 1px solid #e41843;
+    height: 30px;
+    width: 210px;
+}
+.pizzacontent {
+    color: #e41843;
+    margin: 10px 10px;
+    text-align: justify;
+}
+.pizzaname-text {
+    color: #fff;
+    font-weight: bold;
+    line-height: 40px;
+    vertical-align: middle;
+}
+.pizzaname {
+    height: 40px;
+    margin-top: 20px;
+    margin-left: -20px;
+    width: 270px;
+    background-color: #e41843;
+    text-align: left;
+    padding-left: 30px;
+}
+.content {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.pizzacard {
+    width: 270px; 
+    background-color: #fff; 
+    border-radius: 0;
+}
+.doughselect {
+    margin: 10px 10px;
+}
+.doughselect-active {
+    color: #e41843;
+    font-weight: bold;
+}
+.doughselect-passive {
+    color: #ed7673;
+}
+.pizzaimg{
+    width: 215px; 
+    margin: 15px 0 0 15px;
+}
+.pizzaorder {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px 10px;
+    line-height: 28px;
+    height: 30px;
+    width: 210px;
+}
+.pizzaorder-price {
+    color: #e41843;
+    font-size: 1.8em;
+}
+.pizzaorder-tocart {
+    background-color: #83ca1e;
+    color: #fff;
+    padding: 0 20px;
 }
