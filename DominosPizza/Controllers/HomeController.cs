@@ -13,7 +13,7 @@ namespace DominosPizza.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Vacations()
         {
             ViewBag.Message = "Your application description page.";
 
@@ -24,6 +24,16 @@ namespace DominosPizza.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        public ActionResult HowToOrder()
+        {
+            return View();
+        }
+
+        public ActionResult Rules()
+        {
             return View();
         }
     }
