@@ -5,11 +5,11 @@ using System.Web;
 
 namespace DominosPizza.Models
 {
-    public class User
+    public class TaskList
     {
         public int Id { get; set; }
-        public string UserLogin { get; set; }
-        public string UserName { get; set; }
-        public string UserRole { get; set; }
+        public int TaskId { get; set; }
+        public int ProductId { get; set; }
+        public int ProductQuantity { get; set; }
     }
 }

@@ -5,9 +5,9 @@ using System.Web;
 
 namespace DominosPizza.Models
 {
-    public class Customer
+    public class Customers
     {
-        private int customerId;
+        public int CustomersId { get; set; } 
         private string customerName;
         private string customerPatronymicName;
         private string customerSurName;
@@ -23,13 +23,6 @@ namespace DominosPizza.Models
             customerCreateDate = DateTime.Now;
         }
 
-        public int CustomerId
-        {
-            get
-            {
-                return customerId;
-            }
-        }
 
         public DateTime CustomerCreateDate
         {

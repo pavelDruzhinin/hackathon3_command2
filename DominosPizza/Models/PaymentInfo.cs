@@ -5,7 +5,9 @@ using System.Web;
 
 namespace DominosPizza.Models
 {
-    public class Task
+    public class PaymentInfo
     {
+       
+
     }
 }
