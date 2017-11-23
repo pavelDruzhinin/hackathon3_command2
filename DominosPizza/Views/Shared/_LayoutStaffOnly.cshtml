@@ -9,22 +9,17 @@
     <title>@ViewBag.Title – приложение ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @{ var temp = Convert.ToString(ViewBag.cartindicator);}
 </head>
 <body>
     <div id="topImage">
         <div><img src="../img/top.png" /></div>
-        <div id="logo"><a href="/Manager/Index"><img  src="../img/logo.png" /></a></div>
+        <div id="logo"><a href="/Home/Index"><img src="../img/logo.png" /></a></div>
     </div>
     <div class="container">
         <div id="customnavbar">
-                <div class="menuitems">@Html.ActionLink("ВЫБРАТЬ ПИЦЦУ", "Index", "Home")</div>
-                <div class="menuitems">@Html.ActionLink("ПРАВИЛА", "Index", "Home")</div>
-                <div class="menuitems">@Html.ActionLink("КАК ЗАКАЗАТЬ", "Index", "Home")</div>
-                <div class="menuitems">@Html.ActionLink("КОНТАКТНАЯ ИНФОРМАЦИЯ", "Index", "Home")</div>
-                <div class="menuitems">@Html.ActionLink("ВАКАНСИИ", "Index", "Home")</div>
-                <div class="menuitems" id="myCart">@Html.ActionLink("КОРЗИНА", "Cart", "Home")</div><div class="menuitems" id="cartindicator">@temp</div>
-
+                <div class="menuitems">@Html.ActionLink("ПРИЁМ", "Index", "Manager")</div>
+                <div class="menuitems">@Html.ActionLink("КУХНЯ", "Index", "Kitchen")</div>
+                <div class="menuitems">@Html.ActionLink("ДОСТАВКА", "Index", "Delivery")</div>
         </div>
         <div class="hrcustom"> </div>
     </div>

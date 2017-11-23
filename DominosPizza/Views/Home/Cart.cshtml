@@ -1,0 +1,126 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Ваш заказ </h2>
+<div class="row">
+    <div class="col-sm-6">
+        <br>
+
+        <div class="well content kitchen">
+
+                        @{var list = ViewBag.cartList;}
+
+                        <table>
+                            <tbody class="managerOrderList">
+                                <tr class="thead"><td> Наименование</td><td> Количество</td><td class="tdblank" style=" border-right: none; border-top: none; border-bottom: none;"></td></tr>
+                                @foreach (KeyValuePair<int, int> keyValue in list)
+                                {
+                                    var temp = ViewBag.prod;
+                                    <tr><td> @temp[keyValue.Key] </td><td id="tdamount-@keyValue.Key"> @keyValue.Value</td><td class="tdblank" style=" border-right: none; border-top: none; border-bottom: none;"><div style="display:flex; justify-content: flex-start;">
+
+                                     <div style=" display:flex; justify-content: flex-start;">
+                                        <button style=" display:block; margin:0 3px;" class="btn btn-success mins" id="mins-@keyValue.Key" onclick="minus(this.id)">-</button>
+                                        <button style=" display:block;" class="btn btn-success plus" id="plus-@keyValue.Key" onclick="plus(this.id)">+</button>
+                                        <input type="hidden" id="val-@keyValue.Key" name="productId" value="@keyValue.Key" />
+                                        <input type="hidden" id="amount-@keyValue.Key" name="amount" value="@keyValue.Value" /></div></div></td></tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+ <!--                   <form method="post" enctype="multipart/form-data" action="/Delivery/DeliveryReadyTask">
+                        <input class="btn btn-danger" type="submit" value="пересчитать" />    
+                        </form>-->
+                    </div>
+
+<!--ПЛЮС и МИНУС----->
+<script type="text/javascript">
+            function plus(id) {
+                var uid = parseInt(id.slice(5));
+                var tdam = document.getElementById("tdamount-" + uid);
+                var am = document.getElementById("amount-" + uid);
+                am.value = parseInt(am.value, 10) + 1;
+                tdam.innerHTML = am.value;
+            }
+            function minus(id) {
+                var uid = parseInt(id.slice(5));
+                var tdam = document.getElementById("tdamount-" + uid);
+                var am = document.getElementById("amount-" + uid);
+                var j = parseInt(am.value, 10);
+                if (j > 0) {
+                    am.value = j - 1;
+                    tdam.innerHTML = am.value;
+                }
+            }
+        </script>
+        <!--AJAX изменение кол-ва-->
+        <script src="/Scripts/jquery-1.10.2.js"></script>
+        <script type="text/javascript">
+            var c = 0;
+            $("button").click(function (event) {
+
+                if ($(this).hasClass("plus") || $(this).hasClass("mins")) {
+                    event.preventDefault();
+                    var pid = parseInt(this.id.slice(5), 10);
+                    var temp = "#val-" + pid;
+                    var temp2 = "#amount-" + pid;
+                    var id = parseInt($(temp).val());
+                    var qua = parseInt($(temp2).val());
+                    $.ajax({
+                        url: "/Home/CartChangeQuantity",
+                        dataType: "json",
+                        data: {
+                            productId: id,
+                            amount: qua
+                        },
+                        type: "POST",
+                        success: function (data) {
+                            $("#cartindicator").html(data.Data);
+                        }
+
+                    });
+                }
+            });
+        </script>
+
+
+
+                    <p></p><br />
+                    <div class="form-group-row">
+
+                    </div>
+
+
+                    <br />
+                    <br />
+
+
+                        </div>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <form method="post" enctype="multipart/form-data" action="/Home/NewTaskFromCart">
+
+                <label for="TaskDeliveryCustomerAddress">Адрес доставки</label><br />
+                <input class="form-control" type="text" id="TaskDeliveryCustomerAddress" name="TaskDeliveryCustomerAddress" value="адрес клиента из интернет магазина" /><br />
+
+                <label for="TaskDeliveryCustomerPhone">Телефон</label><br />
+                <input class="form-control" type="text" id="TaskDeliveryCustomerPhone" name="TaskDeliveryCustomerPhone" value="+12internet90" /><br />
+
+                <label for="TaskDeliveryCustomerName">ФИО</label><br />
+                <input class="form-control" type="text" id="TaskDeliveryCustomerName" name="TaskDeliveryCustomerName" value="тестовое имя из интернета" /><br />
+
+                <label for="TaskPaymentMethod">Способ платежа</label><br />
+                <input class="form-control" type="text" id="TaskPaymentMethod" name="TaskPaymentMethod" value="Банковская карта" /><br />
+
+                <br />
+                <input class="btn btn-danger" type="submit" value="отправить заказ" />
+            </form>
+        </div>
+    </div>
+</div>
+<br /><br />
+<div class="hrcustom"> </div>
+
+
+

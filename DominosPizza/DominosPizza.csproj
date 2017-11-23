@@ -190,22 +190,43 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DeliveryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KitchenController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+<<<<<<< 2a16dddde79a62e068ac43d43e6fcad2b3d1f3d9
     <Compile Include="Models\Comments.cs" />
     <Compile Include="Models\Contacts.cs" />
     <Compile Include="Models\Customer.cs" />
+=======
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Contacts.cs" />
+    <Compile Include="Models\Customers.cs" />
+    <Compile Include="Models\DominosContext.cs" />
+    <Compile Include="Models\DominosDbInitializer.cs" />
+>>>>>>> В процессе доделывания интерфейса реализовалась минимально работающая версия приложения.
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Ingredients.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+<<<<<<< 2a16dddde79a62e068ac43d43e6fcad2b3d1f3d9
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\Roles.cs" />
     <Compile Include="Models\Task.cs" />
     <Compile Include="Models\User.cs" />
+=======
+    <Compile Include="Models\OrderTable.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\TaskList.cs" />
+    <Compile Include="Models\Tasks.cs" />
+    <Compile Include="Models\TaskComments.cs" />
+    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\UserRoles.cs" />
+>>>>>>> В процессе доделывания интерфейса реализовалась минимально работающая версия приложения.
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -268,6 +289,15 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Rules.cshtml" />
     <Content Include="Views\Home\HowToOrder.cshtml" />
+    <Content Include="Views\Manager\Create.cshtml" />
+    <Content Include="Views\Manager\Delete.cshtml" />
+    <Content Include="Views\Manager\Details.cshtml" />
+    <Content Include="Views\Manager\Edit.cshtml" />
+    <Content Include="Views\Manager\Index.cshtml" />
+    <Content Include="Views\Kitchen\Index.cshtml" />
+    <Content Include="Views\Delivery\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutStaffOnly.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
