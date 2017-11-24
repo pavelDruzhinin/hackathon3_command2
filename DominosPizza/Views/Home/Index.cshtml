@@ -25,7 +25,7 @@
     </div>
     <p class="doughselect"><span class="doughselect-active">Традиционное</span><span class="doughselect-passive"> / Тонкое</span></p>
     <div class="pizzaorder">
-        <div class="pizzaorder-price">@product.ProductPrice<span>руб</span></div>
+        <div class="pizzaorder-price">@product.ProductPrice <span>&#8381;</span></div>
         <div id="addtocartbtn-@product.ProductsId" class="pizzaorder-tocart">в корзину</div>
         
         <input id="addtocartinp-@product.ProductsId" type="hidden" name="productId" value="@product.ProductsId" />
@@ -61,7 +61,7 @@
                 success: function (data) {
                     $("#cartindicator").html(data.Data);
                     $(successFadeOut).css("display", "block");
-                    $(successFadeOut).fadeOut(2500);
+                    $(successFadeOut).fadeOut(2000);
                     }
                 
             });

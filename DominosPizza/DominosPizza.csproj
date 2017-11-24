@@ -284,6 +284,7 @@
     <Content Include="Views\Delivery\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutStaffOnly.cshtml" />
     <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Shared\_OrderTablePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -27,7 +27,7 @@
     @foreach (var task in ViewBag.tasks)
     {
         if (task.TaskStatusId == 1) { 
-        <div class="well pizzacard">
+        <div class="well pizzacard" >
             <button data-toggle="collapse" data-target="#collapse-@task.TasksId" class="collapse-task-content">
                 <p>Номер заказа: @task.TasksId</p>
                 <p><strong> @task.TaskDeliveryDateTime</strong></p>

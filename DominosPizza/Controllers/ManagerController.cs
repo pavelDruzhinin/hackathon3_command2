@@ -60,18 +60,27 @@ namespace DominosPizza.Controllers
 
             int counter = task.AddDishToTaskList(productId, amount);
             List<OrderTable> table = new List<OrderTable>();
-            for (int i = 0; i <= counter; i++)
+            int i = 1;
+            foreach (KeyValuePair < int, int > keyValue in task.TaskList)
             {
                 OrderTable orderTableRow = new OrderTable();
-                orderTableRow.OrderTableId = i+1;
-                orderTableRow.ProductId = productId;
-                orderTableRow.ProductQuantity = amount;
-
+                orderTableRow.OrderTableId = i++;
+                orderTableRow.ProductId = keyValue.Key;
+                orderTableRow.ProductQuantity = keyValue.Value;
+                IQueryable<Products> product = db.ProductsDbSet
+                                                    .Where(c => c.ProductsId == keyValue.Key)
+                                                    .Select(c => c);
+                orderTableRow.ProductName = product.FirstOrDefault().ProductName;
+                orderTableRow.ProductPrice = product.FirstOrDefault().ProductPrice;
+                table.Add(orderTableRow);
             }
 
             Session["task"] = task;
-            return Json(data: new { Data = counter }, behavior: JsonRequestBehavior.AllowGet);
+
+            return PartialView("_OrderTablePartial", table);
+           // return Json(data: new { Data = counter }, behavior: JsonRequestBehavior.AllowGet);
         }
+
         [HttpPost]
         public RedirectToRouteResult NewTaskFromWeb(int TasksId, int userId)
         {

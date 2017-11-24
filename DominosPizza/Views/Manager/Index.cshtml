@@ -44,10 +44,8 @@
         <button id="addtocartbtn" class="btn btn-success">добавить к заказу</button>
         <br />
         <br />
-<!--таблица, куда jquery добавляет строки--!!!надо переделать на отправку куска разметки с сервера!!! -->
-        <table>
-            <tbody class="managerOrderList"></tbody>
-        </table>
+<!--таблица, куда jquery добавляет PartialView с сервера -->
+        <div id="tableContainer"></div>
 <!----->
 
     </div>
@@ -281,19 +279,14 @@
 
             $.ajax({
                 url: "/Manager/AddtoCart",
-                dataType: "json",
+                dataType: "html",
                 data: {
                     productId: parseInt($("#productId").val()),
                     amount: parseInt($("#xamount").val())
                 },
                 type: "POST",
                 success: function (data) {
-                    $("#cartindicator").html(data.Data);
-                    if (c < data.Data) {
-                        if ($("tbody").children()) $("tbody").append("<tr><td>"+data.Data+"</td><td>" + $("#productId option:selected").html() + "</td><td>" + $("#xamount").val() + "</td><tr>");
-                        else $("tbody").html("<tr><td>" + data.Data +"</td><td>" + $("#productId option:selected").html() + "</td><td>" + $("#xamount").val() + "</td><tr>");
-                        c = data.Data;
-                    }
+                        $("#tableContainer").html(data);
                 }
             });
         }

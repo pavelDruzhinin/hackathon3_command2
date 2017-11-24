@@ -1,0 +1,30 @@
+﻿@using DominosPizza.Models
+@model List<OrderTable>
+<table style="width:500px; max-width:500px;">
+    <thead></thead>
+    <tbody class="managerOrderList">
+        <tr class="thead">
+            <td>№</td>
+            <td>арт.</td>
+            <td style="width: 100%">название</td>
+            <td>цена</td>
+            <td>шт.</td>
+            <td>итог</td>
+        </tr>
+            @{ int itog = 0;}
+            @foreach (var tableRow in Model)
+            {
+             itog += tableRow.PreSum();
+        <tr>
+            <td>@tableRow.OrderTableId</td>
+            <td>@tableRow.ProductId</td>
+            <td style="font-weight: 700;">@tableRow.ProductName</td>
+            <td>@tableRow.ProductPrice</td>
+            <td style="font-weight: 700;">@tableRow.ProductQuantity</td>
+            <td>@tableRow.PreSum()</td>
+        </tr>
+        }
+
+    </tbody>
+</table><br />
+<p style="font-size: 2em; font-weight: 800; text-align: left;">@itog <span>&#8381;</span></p>
