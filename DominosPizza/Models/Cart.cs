@@ -29,8 +29,12 @@ namespace DominosPizza.Models
         //если блюдо уже есть в списке, то увеличиваем количество
         if (cartlist.ContainsKey(productId))
         {
-                if (amount == 0) cartlist[productId] = 0;
-                else cartlist[productId] = amount;  //
+                if (amount == 0)
+                {
+                    cartlist[productId] = 0;
+                    cartlist.Remove(productId);
+                }
+                else cartlist[productId] += amount;  //
         }
         //если блюда нет, то добавляем новую пару значений
         else
@@ -40,12 +44,32 @@ namespace DominosPizza.Models
             Counter = cartlist.Count();
         return Counter;
     }
+        public int EditCartList(int productId, int amount)
+        {
+            //если блюдо уже есть в списке, то заменяем количество
+            if (cartlist.ContainsKey(productId))
+            {
+                if (amount == 0)
+                {
+                    cartlist[productId] = 0;
+                    cartlist.Remove(productId);
+                }
+                else cartlist[productId] = amount;  //
+            }
+            //если блюда нет, то добавляем новую пару значений
+            else
+            {
+                cartlist.Add(productId, amount);
+            }
+            Counter = cartlist.Count();
+            return Counter;
+        }
 
 
 
 
 
 
-    
-}
+
+    }
 }

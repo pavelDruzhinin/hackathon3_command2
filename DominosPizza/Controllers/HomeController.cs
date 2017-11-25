@@ -53,7 +53,30 @@ namespace DominosPizza.Controllers
             }
             ViewBag.prod = productNames;
             ViewBag.cartindicator = cart.Counter;
-            return View();
+
+
+            List<OrderTable> table = new List<OrderTable>();
+            int i = 1;
+            foreach (KeyValuePair<int, int> keyValue in cart.cartlist)
+            {
+                OrderTable orderTableRow = new OrderTable();
+                orderTableRow.OrderTableId = i++;
+                orderTableRow.ProductId = keyValue.Key;
+                orderTableRow.ProductQuantity = keyValue.Value;
+                IQueryable<Products> product = db.ProductsDbSet
+                                                    .Where(c => c.ProductsId == keyValue.Key)
+                                                    .Select(c => c);
+                orderTableRow.ProductName = product.FirstOrDefault().ProductName;
+                orderTableRow.ProductPrice = product.FirstOrDefault().ProductPrice;
+                table.Add(orderTableRow);
+            }
+
+            
+
+            
+           
+
+            return View(table);
         }
         [HttpPost]
         public ActionResult CartChangeQuantity(int productId, int amount) 
@@ -63,7 +86,7 @@ namespace DominosPizza.Controllers
             {
                 cart = (Cart)Session["cart"];
             }
-            int counter = cart.AddDishToCart(productId, amount);
+            int counter = cart.EditCartList(productId, amount);
             Session["cart"] = cart;
             return Json(data: new { Data = counter }, behavior: JsonRequestBehavior.AllowGet);
         }

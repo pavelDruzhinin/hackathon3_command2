@@ -11,7 +11,20 @@ namespace DominosPizza.Models
         public int TaskCommentsId { get; set; } 
         public int TaskId { get; set; }
         public int UserId { get; set; }
-        public DateTime CommentTime { get; set; }
-        public string CommentText { get; set; } 
+
+        private DateTime commentTime;
+
+        public DateTime GetCommentTime()
+        {
+            return commentTime;
+        }
+
+        public void SetCommentTime(DateTime value)
+        {
+            commentTime = value;
+        }
+
+        public string CommentText { get; set; }
+        public string UserName { get; set; }
     }
 }
