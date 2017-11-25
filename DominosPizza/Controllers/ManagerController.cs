@@ -139,6 +139,39 @@ namespace DominosPizza.Controllers
             return RedirectToRoute(new { controller = "Manager", action = "Index" });
         }
 
+        [HttpPost]
+        public ActionResult TaskCommentsShow(int taskId)
+        {
+            IQueryable<TaskComments> table = db.TaskCommentsDbSet
+                                                    .Where(c => c.TaskId == taskId)
+                                                    .Select(c => c);
+            return PartialView("_CommentsWindowPartial", table);
+        }
+
+        [HttpPost]
+        public ActionResult AddNewComment(int TasksId, int userId, string CommentText)
+        {
+            TaskComments newComment = new TaskComments();
+            newComment.TaskId = TasksId;
+            newComment.UserId = userId;
+            newComment.CommentText = CommentText;
+            newComment.SetCommentTime(DateTime.Now);
+            IQueryable<Users> table = db.UsersDbSet
+                                        .Where(c => c.UsersId == userId)
+                                        .Select(c => c);
+            newComment.UserName = table.FirstOrDefault().UserName;
+
+            db.TaskCommentsDbSet.Add(newComment);
+            db.SaveChanges();
+            IQueryable<TaskComments> table2 = db.TaskCommentsDbSet
+                                                    .Where(c => c.TaskId == TasksId)
+                                                    .Select(c => c);
+            return PartialView("_CommentsWindowPartial", table2);
+        }
+
+
+
+
         // GET: Manager/Details/5
         public ActionResult Details(int? id)
         {

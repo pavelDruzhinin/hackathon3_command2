@@ -210,8 +210,11 @@ textarea {
     padding: 0 20px;
 }
 
-
-
+.plus, .mins, .dels {
+    font-size: .7em;
+    padding-left: 7px;
+    padding-right: 7px;
+}
 
 .plus, .mins,
 .plus:focus, .mins:focus {
@@ -259,4 +262,69 @@ textarea {
     box-shadow: unset;
 }
 
+.comments-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -250px 0 0 -150px;
+    display: none;
+    background-color: rgba(147, 147, 147, 0.70);
+    width: 300px;
+    height: 500px;
 
+}
+.commentsTop {
+    padding-right: 10px;
+    margin: 10px;
+    margin-right: 0px;
+    width: 30px;
+    height: 350px;
+    border-bottom: 1px solid white;
+}
+.comments-window {
+    padding-right: 10px;
+    margin: 10px;
+    margin-right: 0px;
+    width: 290px;
+    height: 350px;
+    overflow: auto;
+}
+.comment-header{
+    display: flex;
+    justify-content: space-between;
+}
+.comment-header span{
+    color: white;
+    padding: 3px 10px;
+    background-color: #7ab920;
+    font-size: .6em;
+}
+.comment-message {
+    line-height: .9em;
+    font-size: .8em;
+    padding: 10px 0px;
+}
+
+#NewCommentInput {
+    height: 100px;
+    min-height: 100px;
+    width: 280px;
+    max-width: 280px;
+    min-width: 280px;
+    margin: 10px;
+    border: none;
+    padding: 10px;
+    font-size: .9em;
+}
+.commentUser{
+    display: flex;
+    justify-content:space-between;
+    margin: 5px 15px 10px 15px;
+    color: white;
+}
+#closeComments{
+    font-size: .7em;
+    padding: 5px 8px;
+    margin-right: -5px;
+    margin-bottom: 6px;
+}

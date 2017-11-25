@@ -24,8 +24,9 @@ namespace DominosPizza.Models
             db.UsersDbSet.Add(new Users { UserRoleId = 1, UserName = "АннаМенеджер" });
             db.UsersDbSet.Add(new Users { UserRoleId = 2, UserName = "ПётрПовар" });
             db.UsersDbSet.Add(new Users { UserRoleId = 3, UserName = "ИванКурьер" });
-
-
+            db.TaskCommentsDbSet.Add(new TaskComments { TaskId = 1, UserName = "ПётрПовар", CommentText = "не успею сделать в срок, последняя банка с шампиньонами оказалась испорченной" });
+            db.TaskCommentsDbSet.Add(new TaskComments { TaskId = 1, UserName = "ИванКурьер", CommentText = "я пока свободен, сейчас сгоняю в магазин" });
+            db.TaskCommentsDbSet.Add(new TaskComments { TaskId = 1, UserName = "АннаМенеджер", CommentText = "ребята, заказ очень важный, не подведите" });
 
             base.Seed(db);
         }
