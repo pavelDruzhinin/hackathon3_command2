@@ -29,7 +29,7 @@ namespace DominosPizza.Controllers
 
             foreach (var temp in products)
             {
-                productNames.Add(temp.ProductsId, temp.ProductName);
+                productNames.Add(temp.ProductId, temp.ProductName);
             }
             ViewBag.prod = productNames;
 
@@ -68,10 +68,10 @@ namespace DominosPizza.Controllers
                 orderTableRow.ProductId = keyValue.Key;
                 orderTableRow.ProductQuantity = keyValue.Value;
                 IQueryable<Products> product = db.ProductsDbSet
-                                                    .Where(c => c.ProductsId == keyValue.Key)
+                                                    .Where(c => c.ProductId == keyValue.Key)
                                                     .Select(c => c);
                 orderTableRow.ProductName = product.FirstOrDefault().ProductName;
-                orderTableRow.ProductPrice = product.FirstOrDefault().ProductPrice;
+                orderTableRow.ProductPrice = (int)product.FirstOrDefault().ProductPrice;
                 table.Add(orderTableRow);
             }
 

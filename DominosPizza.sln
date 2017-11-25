@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominosPizza", "DominosPizza\DominosPizza.csproj", "{13697B89-81EF-4C40-8C80-461AE8005E47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominoPizza", "DominoPizza\DominoPizza.csproj", "{61FDB6F7-47F0-43D9-86A3-538ADB140661}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{13697B89-81EF-4C40-8C80-461AE8005E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{13697B89-81EF-4C40-8C80-461AE8005E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{13697B89-81EF-4C40-8C80-461AE8005E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{13697B89-81EF-4C40-8C80-461AE8005E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61FDB6F7-47F0-43D9-86A3-538ADB140661}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FDB6F7-47F0-43D9-86A3-538ADB140661}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FDB6F7-47F0-43D9-86A3-538ADB140661}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FDB6F7-47F0-43D9-86A3-538ADB140661}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

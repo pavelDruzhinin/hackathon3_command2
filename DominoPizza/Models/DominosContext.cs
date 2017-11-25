@@ -13,7 +13,7 @@ namespace DominosPizza.Models
         public DbSet<Tasks> TasksDbSet { get; set; }
         public DbSet<TaskComments> TaskCommentsDbSet { get; set; }
         public DbSet<Products> ProductsDbSet { get; set; }
-        public DbSet<Customers> CustomersDbSet { get; set; }
+        public DbSet<Customer> CustomersDbSet { get; set; }
         public DbSet<Contacts> ContactsDbSet { get; set; }
         public DbSet<TaskList> TaskListsDbSet { get; set; }
         

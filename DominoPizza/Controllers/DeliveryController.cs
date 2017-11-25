@@ -18,7 +18,7 @@ namespace DominosPizza.Controllers
 
             foreach (var temp in products)
             {
-                productNames.Add(temp.ProductsId, temp.ProductName);
+                productNames.Add(temp.ProductId, temp.ProductName);
             }
             ViewBag.prod = productNames;
             IEnumerable<Tasks> tasks = db.TasksDbSet;
