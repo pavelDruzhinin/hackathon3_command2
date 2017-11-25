@@ -7,13 +7,12 @@ namespace DominosPizza.Models
 {
     public class Products
     {
-        public int ProductsId { get; set; } 
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public int ProductPrice { get; set; }
-        public string ProductDescription { get; set; }
-        public string ProductRecipe { get; set; }
-        public string ImageLink { get; set; }
+        public double ProductWeight { get; set; }
+        public double ProductPrice { get; set; }
+        public double ProductQuantity { get; set; }
 
-
+        public ICollection<Ingredients> IngredientsId { get; set; }
     }
 }
